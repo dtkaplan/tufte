@@ -132,14 +132,15 @@ tufte_html = function(
     }
     res = knitr::hook_plot_md(x, options)
     if (fig_margin) {
-      res = gsub_fixed('<p class="caption">', '<!--\n<p class="caption marginnote">-->', res)
-      res = gsub_fixed('</p>', '<!--</p>-->', res)
-      res = gsub_fixed('</div>', '<!--</div>--></span></p>', res)
-      res = gsub_fixed(
-        '<div class="figure">', paste0(
-          '<p>', '<span class="marginnote shownote">', '\n<!--\n<div class="figure">-->'
-        ), res
-      )
+      # Danny removed these
+      # res = gsub_fixed('<p class="caption">', '<!--\n<p class="caption marginnote">-->', res)
+      # res = gsub_fixed('</p>', '<!--</p>-->', res)
+      # res = gsub_fixed('</div>', '<!--</div>--></span></p>', res)
+      # res = gsub_fixed(
+      #  '<div class="figure">', paste0(
+      #    '<p>', '<span class="marginnote shownote">', '\n<!--\n<div class="figure">-->'
+      #  ), res
+      #)
     } else if (fig_fullwd) {
       res = gsub_fixed('<div class="figure">', '<div class="figure fullwidth">', res)
       res = gsub_fixed(
